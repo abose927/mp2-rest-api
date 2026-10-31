@@ -19,7 +19,7 @@ class DatasetStorage:
     def get(self, dataset_id):
         """Return a copy of the stored DataFrame, or None."""
         if dataset_id in self._store:
-            df = self.store[dataset_id].copy()
+            df = self._store[dataset_id].copy()
             logger.debug(f"Retrieved dataset copy: id={dataset_id}, rows={len(df)}")
             return self._store[dataset_id]["df"].copy()
         else:
